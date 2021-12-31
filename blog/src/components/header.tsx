@@ -89,45 +89,37 @@ handleSmallScreens()
           
               <div className="navbar-menu" id="open-navbar1">
                 <ul className="navbar-nav">
-                  <li className="active"><a href="#">Home</a></li>
+                  <li className="active"><a href="/">首页</a></li>
                   <li className="navbar-dropdown">
                     <a href="#" className="dropdown-toggler" data-dropdown="my-dropdown-id">
-                      Categories <i className="fa fa-angle-down"></i>
+                      Java <i className="fa fa-angle-down"></i>
                     </a>
                     <ul className="dropdown" id="my-dropdown-id">
-                      <li><a href="#">Actions</a></li>
-                      <li><a href="#">Something else here</a></li>
+                      <li><a href="#">初级教程</a></li>
                       <li className="separator"></li>
-                      <li><a href="#">Seprated link</a></li>
+                      <li><a href="#">Spring系列教程</a></li>
                       <li className="separator"></li>
-                      <li><a href="#">One more seprated link.</a></li>
+                      <li><a href="#">进阶教程</a></li>
+                     
                     </ul>
                   </li>
                   <li className="navbar-dropdown">
                     <a href="#" className="dropdown-toggler" data-dropdown="blog">
-                      Blog <i className="fa fa-angle-down"></i>
+                      React <i className="fa fa-angle-down"></i>
                     </a>
                     <ul className="dropdown" id="blog">
-                      <li><a href="#">Some category</a></li>
-                      <li><a href="#">Some another category</a></li>
+                      <li><a href="#">初级教程</a></li>
                       <li className="separator"></li>
-                      <li><a href="#">Seprated link</a></li>
-                      <li className="separator"></li>
-                      <li><a href="#">One more seprated link.</a></li>
+                      <li><a href="#">进阶教程</a></li>
                     </ul>
                   </li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Signin</a></li>
+                  <li><a href="#">Vue</a></li>
+                  <li><a href="#">面试典籍</a></li>
                 </ul>
               </div>
             </div>
           </nav>
         )
     }
-
-
 }
-
-
 export default Header
