@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Java、vue、react系列教程`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `陈国杨`,
+      summary: `从事软件开发工作.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
