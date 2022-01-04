@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './header.scss'
-
+import { StaticImage } from "gatsby-plugin-image"
 class Header extends React.Component {
 
     componentDidMount() {
@@ -83,7 +83,16 @@ handleSmallScreens()
                   <span></span>
                 </button>
                 <a href="#">
-                  <h5>Awesome<span>logo</span></h5>
+                <StaticImage
+        className="bio-avatar"
+        layout="fixed"
+        formats={["auto", "webp", "avif"]}
+        src="../images/logo1.png"
+        width={50}
+        height={50}
+        quality={95}
+        alt="Profile picture"
+      /><span>老杨博客</span>
                 </a>
               </div>
           
