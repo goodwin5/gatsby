@@ -5,21 +5,16 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+const ListBymenu = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-  const params = new URLSearchParams(location.search);
-  const catalogue = params.get("catalogue");
- 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="老杨博客" />
+        <Seo title="All posts" />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+           暂无
         </p>
       </Layout>
     )
@@ -27,12 +22,13 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="老杨博客" />
+      <Seo title="All posts" />
       <Bio />
       <ol style={{ listStyle: `none` }}>
+      
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-
+   
           return (
             <li key={post.fields.slug}>
               <article
@@ -65,23 +61,24 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default ListBymenu
 
 export const pageQuery = graphql`
-  query getBlogList($catalogue:String){
+  query getBlogsbymenu($menu: String){
     site {
       siteMetadata {
-        title
+        title   
+        menus    
       }
-    } 
-    allMarkdownRemark(filter: {frontmatter: {catalogue: {eq: $catalogue}}},sort: { fields: [frontmatter___date], order: DESC }) {
+    }
+    allMarkdownRemark(filter:{frontmatter: {catalogue: {eq: $menu}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {
           slug
         }
         frontmatter {
-          date(formatString: "yyyy-MM-DD HH:mm:ss")
+          date(formatString: "MMMM DD, YYYY")
           title
           description
         }
@@ -89,3 +86,4 @@ export const pageQuery = graphql`
     }
   }
 `
+

@@ -82,7 +82,7 @@ handleSmallScreens()
                   <span></span>
                   <span></span>
                 </button>
-                <a href="#">
+                <a href="/">
                 <StaticImage
         className="bio-avatar"
         layout="fixed"
@@ -92,38 +92,28 @@ handleSmallScreens()
         height={50}
         quality={95}
         alt="Profile picture"
-      /><span>老杨博客</span>
+      />
                 </a>
+                <span>老杨博客</span>
               </div>
           
               <div className="navbar-menu" id="open-navbar1">
                 <ul className="navbar-nav">
                   <li className="active"><a href="/">首页</a></li>
-                  <li className="navbar-dropdown">
-                    <a href="#" className="dropdown-toggler" data-dropdown="my-dropdown-id">
-                      Java <i className="fa fa-angle-down"></i>
-                    </a>
-                    <ul className="dropdown" id="my-dropdown-id">
-                      <li><a href="/?catalogue=java">初级教程</a></li>
-                      <li className="separator"></li>
-                      <li><a href="#">Spring系列教程</a></li>
-                      <li className="separator"></li>
-                      <li><a href="#">进阶教程</a></li>
-                     
-                    </ul>
-                  </li>
-                  <li className="navbar-dropdown">
+                  <li><a href="/java">Java</a></li>
+                  <li><a href="/java">React</a></li>
+                  {/* <li className="navbar-dropdown">
                     <a href="#" className="dropdown-toggler" data-dropdown="blog">
                       React <i className="fa fa-angle-down"></i>
                     </a>
                     <ul className="dropdown" id="blog">
-                      <li><a href="#">初级教程</a></li>
+                      <li><a href="/react">初级教程</a></li>
                       <li className="separator"></li>
-                      <li><a href="#">进阶教程</a></li>
+                      <li><a href="/react">进阶教程</a></li>
                     </ul>
-                  </li>
-                  <li><a href="#">Vue</a></li>
-                  <li><a href="#">面试典籍</a></li>
+                  </li> */}
+                  <li><a href="/vue">Vue</a></li>
+                  <li><a href="/interview">面试典籍</a></li>
                 </ul>
               </div>
             </div>
