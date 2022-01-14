@@ -62,17 +62,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
-<<<<<<< HEAD
-  context:{
-    entries
-  }
-  const menutmp = path.resolve(`./src/templates/menus.js`)
-  const result1 = await graphql(
-    ` 
-      {
-       
-          site{
-=======
    // Get all markdown blog posts sorted by date
    const site_menus = await graphql(
     `
@@ -80,31 +69,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
          
           site {
             id
->>>>>>> 500b23f2e2b14a72a34d92598e14dda37ce0f783
             siteMetadata {
               menus
             }
           }
-<<<<<<< HEAD
-        
-        
-      }
-    `
-  )
-  const menus = result1.data.site.siteMetadata.menus;
-  if(menus.length > 0) {
-    menus.forEach((menu,index) => {
-      createPage({
-        path: '/' + menu,
-        component: menutmp,
-        context: {
-          menu: menu
-        }
-      })
-    })
-  }
-  console.log(result1.data.site.siteMetadata.menus[0])
-=======
         }
    
     `
@@ -123,7 +91,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
      }
      )
    })
->>>>>>> 500b23f2e2b14a72a34d92598e14dda37ce0f783
 }
 
 
@@ -176,11 +143,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       description: String
-<<<<<<< HEAD
-      date: Date @dateformat(formatString: "yyyy-MM-dd HH:mm")
-=======
       date: Date @dateformat(formatString: "yyyy-MM-dd HH:mm:ss")
->>>>>>> 500b23f2e2b14a72a34d92598e14dda37ce0f783
       catalogue: String
     }
 

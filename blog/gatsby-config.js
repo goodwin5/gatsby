@@ -10,11 +10,7 @@ module.exports = {
     social: {
       twitter: `kylemathews`,
     },
-<<<<<<< HEAD
-    menus: ["java","react"]
-=======
     menus : ["java","react","vue","interview"]
->>>>>>> 500b23f2e2b14a72a34d92598e14dda37ce0f783
   },
   plugins: [
     `gatsby-plugin-image`,

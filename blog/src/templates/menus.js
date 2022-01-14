@@ -74,7 +74,8 @@ export const pageQuery = graphql`
         title
       }
     } 
-    allMarkdownRemark(filter: {frontmatter: {catalogue: {eq: $menu}}},sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: {frontmatter: {catalogue: {eq: $menu}}},
+        sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {
