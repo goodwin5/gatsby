@@ -104,7 +104,7 @@ handleSmallScreens()
                       Java <i className="fa fa-angle-down"></i>
                     </a>
                     <ul className="dropdown" id="my-dropdown-id">
-                      <li><a href="#">初级教程</a></li>
+                      <li><a href="/?catalogue=java">初级教程</a></li>
                       <li className="separator"></li>
                       <li><a href="#">Spring系列教程</a></li>
                       <li className="separator"></li>

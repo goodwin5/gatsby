@@ -10,6 +10,7 @@ module.exports = {
     social: {
       twitter: `kylemathews`,
     },
+    menus: ["java","react"]
   },
   plugins: [
     `gatsby-plugin-image`,

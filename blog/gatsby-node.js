@@ -1,5 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { entries } = require("lodash")
+
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -56,6 +58,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  context:{
+    entries
+  }
+  const menutmp = path.resolve(`./src/templates/menus.js`)
+  const result1 = await graphql(
+    ` 
+      {
+       
+          site{
+            siteMetadata {
+              menus
+            }
+          }
+        
+        
+      }
+    `
+  )
+  const menus = result1.data.site.siteMetadata.menus;
+  if(menus.length > 0) {
+    menus.forEach((menu,index) => {
+      createPage({
+        path: '/' + menu,
+        component: menutmp,
+        context: {
+          menu: menu
+        }
+      })
+    })
+  }
+  console.log(result1.data.site.siteMetadata.menus[0])
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -106,6 +140,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat(formatString: "yyyy-MM-dd HH:mm")
+      catalogue: String
     }
 
     type Fields {

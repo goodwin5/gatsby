@@ -8,7 +8,6 @@ import Seo from "../components/seo"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-  console.log(location)
   const params = new URLSearchParams(location.search);
   const catalogue = params.get("catalogue");
  
@@ -69,13 +68,13 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query getBlogList($catalogue:String){
+  query getMenu($menu:String){
     site {
       siteMetadata {
         title
       }
     } 
-    allMarkdownRemark(filter: {frontmatter: {catalogue: {eq: $catalogue}}},sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: {frontmatter: {catalogue: {eq: $menu}}},sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {
