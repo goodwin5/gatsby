@@ -1,9 +1,10 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-
+  
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
@@ -19,7 +20,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
-            }
+            }           
           }
         }
       }
@@ -33,14 +34,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     )
     return
   }
-
+ 
   const posts = result.data.allMarkdownRemark.nodes
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  if (posts.length > 0) {
+  if (posts.length > 0) 
+  {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
@@ -48,19 +50,50 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: post.fields.slug,
         component: blogPost,
+       
         context: {
           id: post.id,
           previousPostId,
-          nextPostId,
+          nextPostId,    
         },
       })
     })
   }
+
+   // Get all markdown blog posts sorted by date
+   const site_menus = await graphql(
+    `
+      {
+         
+          site {
+            id
+            siteMetadata {
+              menus
+            }
+          }
+        }
+   
+    `
+  )
+
+  const menutmp = path.resolve(`./src/templates/listbymenu.js`)
+
+  const menus = site_menus.data.site.siteMetadata.menus
+   menus.forEach((menu,index) => {
+     createPage({
+       path: "/" + menu,
+       component: menutmp,
+       context: {
+         menu:menu
+       }
+     }
+     )
+   })
 }
+
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
 
@@ -86,8 +119,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       author: Author
       siteUrl: String
       social: Social
+     
+      
     }
-
+ 
+ 
     type Author {
       name: String
       summary: String
@@ -105,7 +141,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       description: String
-      date: Date @dateformat(formatString: "yyyy-MM-dd HH:mm")
+      date: Date @dateformat(formatString: "yyyy-MM-dd HH:mm:ss")
+      catalogue: String
     }
 
     type Fields {

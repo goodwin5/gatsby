@@ -31,6 +31,7 @@ const Layout = ({ location, title, children }) => {
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <span>  {` `}浙ICP备2022000609号-1</span>
       </footer>
     </div>
     </div>

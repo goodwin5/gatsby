@@ -10,13 +10,14 @@ module.exports = {
     social: {
       twitter: `kylemathews`,
     },
+    menus : ["java","react","vue","interview"]
   },
   plugins: [
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content`,
         name: `blog`,
       },
     },
