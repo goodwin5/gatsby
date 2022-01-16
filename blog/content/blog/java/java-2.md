@@ -2,7 +2,7 @@
 slug: /java/springboot-1
 title: SpringBoot教程
 date: "2022-01-15 16:38"
-description: JAVA 于 1991 年由 Sun Microsystems 公司 的 James Gosling 开发，后来被Oracle收购。 它是一种简单的编程语言。 Java 使编写、编译和调试程序跨平台变得容易,而且它有助于创建可重用的代码和模块化程序。
+description: 我们的 Spring Boot 教程包括 Spring Boot 的所有主题，例如特性、项目、maven 项目、启动项目向导、Spring Initializr、CLI、应用程序、注释、依赖管理、属性、启动器、Actuator、JPA、JDBC 等。
 catalogue: java
 refs: https://www.softwaretestingmaterial.com/java-tutorial/
 ---

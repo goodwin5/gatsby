@@ -82,19 +82,19 @@ handleSmallScreens()
                   <span></span>
                   <span></span>
                 </button>
-                <a href="/">
+                <a href="/" style={{display:'flex'}}>
                 <StaticImage
         className="bio-avatar"
         layout="fixed"
-        formats={["auto", "webp", "avif"]}
+        formats={["auto", "webp", "avif","png"]}
         src="../images/logo1.png"
         width={50}
         height={50}
         quality={95}
         alt="Profile picture"
-      />
+      /> <div style={{display:'flex',alignItems: 'center'}}><span>老杨博客</span> </div>
                 </a>
-                <span>老杨博客</span>
+              
               </div>
           
               <div className="navbar-menu" id="open-navbar1">

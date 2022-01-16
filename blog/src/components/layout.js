@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Header from "./header"
+import Statistics from './statistics'
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
@@ -32,6 +33,7 @@ const Layout = ({ location, title, children }) => {
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
         <span>  {` `}浙ICP备2022000609号-1</span>
+      
       </footer>
     </div>
     </div>
